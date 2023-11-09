@@ -28,11 +28,3 @@ void sort (int length, int tab[]) {
         }
     }
 }
-
-
-int main () {
-    int tab[] = {9,8,5,17,11,3};
-    sort(6, tab);
-    print(6, tab);
-    return 0;
-}

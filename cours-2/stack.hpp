@@ -4,7 +4,7 @@
 struct Stack {
     int taille;
     int tab[20];
-    void Init ();
+    Stack();
     void push (int a);
     int pop();
     void print();

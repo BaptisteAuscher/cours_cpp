@@ -1,7 +1,7 @@
 #include <iostream>
 #include "stack.hpp"
 
-void Stack::Init() {
+Stack::Stack() {
     taille = 0;
     for (int i = 0; i < 20; ++i) {
         tab[i] = 0;

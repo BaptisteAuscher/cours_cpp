@@ -3,7 +3,6 @@
 
 int main() {
     Stack mystack;
-    mystack.Init();
 
     mystack.push(3);
     mystack.push(5);

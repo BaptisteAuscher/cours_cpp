@@ -3,8 +3,10 @@
 
 struct Stack {
     int taille;
-    int tab[20];
-    Stack();
+    int head;
+    int * tab;
+    Stack(int taille = 100);
+    ~Stack();
     void push (int a);
     int pop();
     void print();

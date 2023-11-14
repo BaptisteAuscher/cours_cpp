@@ -1,24 +1,27 @@
 #include <iostream>
 #include "stack.hpp"
 
-Stack::Stack() {
-    taille = 0;
-    for (int i = 0; i < 20; ++i) {
-        tab[i] = 0;
-    }
+Stack::Stack(int taille) {
+    head = 0;
+    this->taille = taille;
+    tab = new int [taille];
+}
+
+Stack::~Stack() {
+    delete tab;
 }
 
 void Stack::push (int a) {
-    if (taille < 20) {
-        tab[taille] = a;
-        taille = taille + 1;
+    if (head < taille) {
+        tab[head] = a;
+        head += 1;
     }
 }
 
 int Stack::pop () {
-    if (taille > 0) {
-        int temp = tab[taille - 1];
-        taille = taille - 1;
+    if (head > 0) {
+        int temp = tab[head - 1];
+        head -= 1;
         return temp;
     }
     return -1;
@@ -27,7 +30,7 @@ int Stack::pop () {
  void Stack::print () {
     std::cout << "[";
     int i = 0;
-    for (; i < taille - 1; ++i) {
+    for (; i < head - 1; ++i) {
         std::cout << tab[i] << ",";
     }
     if (i < taille) {

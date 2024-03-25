@@ -11,6 +11,28 @@ Stack::~Stack() {
     delete tab;
 }
 
+Stack::Stack(Stack const & auxStack) {
+    taille = auxStack.taille;
+    head = auxStack.head;
+    tab = new int [taille];
+    for (int i = 0; i < head; ++i) {
+        tab[i] = auxStack.tab[i];
+    }
+}
+
+Stack& Stack::operator= (Stack const & auxStack) {
+    if (this != & auxStack) {
+        delete tab;
+        this->taille = auxStack.taille;
+        this->head = auxStack.head;
+        this->tab = new int[taille];
+        for (int i = 0; i < head; ++i) {
+            this->tab[i] = auxStack.tab[i];
+        }
+    }
+    return *this;
+}
+
 void Stack::push (int a) {
     if (head < taille) {
         tab[head] = a;
